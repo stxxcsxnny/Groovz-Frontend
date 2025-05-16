@@ -1,0 +1,353 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  
+}
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.chatListContainer {
+  height: 65%;
+  width: 20%;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  margin-right: 10px;
+
+  display: block;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.mainContainer {
+  height: calc(100vh);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-image: url("./2222222.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.footer {
+  display: none;
+}
+.chatContainer {
+  height: 70%;
+  width: 55%;
+  border-radius: 20px;
+  margin-top: 5%;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  
+}
+.profileContainer {
+  height: 90%;
+}
+
+/* Main Menu Styling */
+.menu {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Div (Image) Styling */
+.menu > li > label > div {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("../../assets/menu-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  animation: slideInFromTop 1.5s ease-in-out;
+
+  margin-left: 60px;
+}
+
+/* Input Checkbox for Toggle */
+.menu input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+/* Initially Hidden Dropdown Menu */
+.menu ul {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.8s ease;
+  top: 45px;
+
+  width: 25%;
+  list-style: none;
+  padding: 0;
+  margin-left: 60px;
+
+  /* Styling for Dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+}
+
+/* Show Dropdown Menu When Active */
+.menu input[type="checkbox"]:checked + label + ul {
+  height: 500px;
+  opacity: 1;
+  padding: 0px;
+}
+
+/* Individual Menu Items */
+.menu ul li {
+  margin-bottom: 20px;
+}
+
+/* Links Inside Menu Items */
+.menu ul li {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search {
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../../assets/target-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.add-group {
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../../assets/add-user-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification {
+  height: 50px;
+  width: 50px;
+  background-image: url("../../assets/notification-unscreen.gif"); /* Your icon image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 6px; /* Adjust to move the badge up */
+  right: 12px; /* Adjust to move the badge right */
+  background-color: rgba(22, 164, 22, 0.329);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
+  padding: 2px 4px;
+  font-size: 6px;
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 10px;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Ensures the badge stays on top */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.logout {
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../../assets/logout-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Mgroup {
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../../assets/society-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile {
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../../assets/profile-unscreen.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 900px) {
+  .chatListContainer {
+    width: 20%;
+    margin-top: 0px;
+    margin-right: 10px;
+    height: 80%;
+   
+  }
+  .chatContainer {
+    height: inherit;
+    margin-top: 50px;
+    height: 80%;
+    width: 60%;
+  }
+
+  .profileContainer {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chatListContainer {
+    width: 15%;
+    margin-top: 0;
+    margin-right: 0;
+    height: 100%;
+    border-radius: 0px;
+    resize: horizontal;
+    overflow: auto;
+   
+  }
+  .profileContainer {
+    display: none;
+  }
+  .chatContainer {
+    width: 95%;
+    height: 100%;
+    margin: 0px;
+    border-radius: 0px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border-top-color: lightgrey;
+  }
+  .footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .mainContainer {
+    display: flex;
+    align-items: unset;
+    height: calc(93vh);
+  }
+
+  .Outer {
+    background-image: url("../CssStyles/2222222.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

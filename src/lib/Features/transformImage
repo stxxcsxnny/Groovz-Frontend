@@ -1,0 +1,9 @@
+const transformImage = (url = '', width = 100) => {
+  // Assuming you might transform the image url based on the width
+  if (!url) {
+    return ''; // Return an empty string or a default placeholder if URL is not provided
+  }
+  return `${url}?width=${width}`;
+};
+
+export { transformImage };
