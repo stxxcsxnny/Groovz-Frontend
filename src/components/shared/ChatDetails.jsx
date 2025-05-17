@@ -9,7 +9,8 @@ import {
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useMyChatsQuery } from '../../redux/api/api';
-import { transformImage } from '../../lib/Features';
+
+const FALLBACK_AVATAR = "https://res.cloudinary.com/djv6y4k4c/image/upload/v1688448397/avatars/defualt_avatar.png";
 
 const ChatDetails = ({ chatId, open, handleClose }) => {
   const { isLoading, data } = useMyChatsQuery('');
@@ -44,7 +45,7 @@ const ChatDetails = ({ chatId, open, handleClose }) => {
         </IconButton>
 
         <Avatar
-          src={transformImage(selectedChat?.avatar)}
+          src={selectedChat?.avatar || FALLBACK_AVATAR}
           alt={selectedChat?.name}
           sx={{
             width: isMobile ? 100 : 120,
@@ -57,9 +58,10 @@ const ChatDetails = ({ chatId, open, handleClose }) => {
           {selectedChat?.name}
         </Typography>
       </Box>
-   <Divider />
 
-      <Box sx={{ px: 3, py: 2, height:'10rem' }}>
+      <Divider />
+
+      <Box sx={{ px: 3, py: 2, height: '10rem' }}>
         <Typography variant="body1" mb={1}>
           Members
         </Typography>
@@ -68,17 +70,19 @@ const ChatDetails = ({ chatId, open, handleClose }) => {
           <Box
             key={member._id}
             sx={{
-              display: 'flex', alignItems: 'center', gap: '1rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
               mb: 1,
-             }}
+            }}
           >
-            <Avatar src={transformImage(member.avatar)} alt={member.name || 'User'} />
+            <Avatar src={member.avatar || FALLBACK_AVATAR} alt={member.name || 'User'} />
             <Typography>{member.name || 'No Name'}</Typography>
           </Box>
         ))}
       </Box>
 
-   <Divider />
+      <Divider />
     </Drawer>
   );
 };

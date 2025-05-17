@@ -34,7 +34,7 @@ const NotificationDialog = ({ _id, accept }) => {
     
       if (res.data?.success) {
        
-        toast.success(res.data?.message)
+        toast.success("requset accepted")
       } else toast.error(res.data?.message || "Something went wrong")
 
     } catch (error) {

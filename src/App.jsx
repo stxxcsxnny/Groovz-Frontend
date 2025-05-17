@@ -24,13 +24,14 @@ const UserManagement = lazy(() => import('./pages/admin/UserManagement'));
 const ChatManagement = lazy(() => import('./pages/admin/ChatManagement'));
 const MessageManagement = lazy(() => import('./pages/admin/MessageManagement'));
 
+axios.defaults.withCredentials = true; 
 const App = () => {
   const { user, loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
     axios
-      .get(`${server}/api/v1/user/profile`, { withCredentials: true })
+      .get(`${server}/api/v1/user/profile`)
       .then((res) => {
 
         dispatch(userExits(res.data.user));

@@ -100,8 +100,6 @@ const Dashboard = () => {
                             padding: '1rem',
                             margin: 'rem 0',
                             borderRadius: '10px',
-                            width: '100%',
-
                             width: { xs: '100%', sm: '500%' },
                             backgroundColor: '#1c1c1c',
                             display: 'flex',
