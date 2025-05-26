@@ -31,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(`${server}/api/v1/user/profile`)
+      .get(`${server}/api/v1/user/profile`, { withCredentials: true })
       .then((res) => {
 
         dispatch(userExits(res.data.user));
